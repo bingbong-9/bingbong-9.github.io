@@ -158,7 +158,7 @@ pre2k unauth -d vintage.htb -dc-ip 10.10.11.45 -save -inputfile /home/hacker/htb
 ```
 
 Next, FS01 belongs to the Domain Computers group and can read the password of the gMSA (Group Managed Service Account).
-![[Snipaste_2024-12-02_16-54-40.png]]
+![alt](assets/vintage/vintage1.png)
 
 Now we want to read the password hash of th eGMSA01 account
 ```sh
@@ -181,7 +181,8 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 [*] Saving ticket in gmsa01$.ccache
 ```
 Now its time to check the permissions of the GMSA01 account,k which ahs the permissions to write to servicemanagers group and add itself:
-![[Snipaste_2024-12-02_09-30-04.png]]
+![alt](assets/vintage/vintage2.png)
+
 Without thinking too much, add the GMSA01 account to the SERVICEMANAGERS group. Unfortunately, the pth-net command in the bloodhound help does not work, NTLM authentication is not enabled, and bloodyAD must be used.
 ```sh
 export KRB5CCNAME=gmsa01\$.ccache
@@ -203,7 +204,7 @@ member: CN=C.Neri,CN=Users,DC=vintage,DC=htb; CN=G.Viola,CN=Users,DC=vintage,DC=
 ```
 
 After joining the group, gmsa01 needs to obtain tgt again, the command is the same as before. Check what the SERVICEMANAGERS group can do, and finally there is an object of First Degree Object Control.
-![alt text](assets/image-7.png)
+![alt text](assets/vintage/vintage3.png)
 
 Using the gmsa01 permissions we can set the 3 accounts that can be controlled to not require PREAUTH, so we can ASREPROAST them. 
 ```sh
@@ -438,9 +439,9 @@ c.neri_adm : Uncr4ck4bl3P4ssW0rd0312
 ```
 
 ### Enumeration
-![alt text](assets/image-5.png)
+![alt text](assets/vintage/vintage4.png)
 
-![alt text](assets/image-6.png)
+![alt text](assets/vintage/vintage5.png)
 
 ---
 ### Privilege escalation

