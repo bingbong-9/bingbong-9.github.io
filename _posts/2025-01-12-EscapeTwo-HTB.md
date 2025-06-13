@@ -6,7 +6,7 @@ tags: [ldap, mssql, writeowner]     # TAG names should always be lowercase
 description: Active Directory box focused on enumeration techniques via SMB, LDAP, and MSSQL, requiring privilege escalation through misconfigured AD objects
 
 image:
-  path: assets\escapetwo\cropped-box-escapetwo.png
+  path: assets/escapetwo/cropped-box-escapetwo.png
 ---
 
 

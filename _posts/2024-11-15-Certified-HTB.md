@@ -6,10 +6,9 @@ tags: [adcs, writeowner]     # TAG names should always be lowercase
 description: 
 
 image:
-  path: assets\certified\cropped-box-certified.png
+  path: assets/certified/cropped-box-certified.png
 ---
 ---
-
 
 ### Introduction
 **Certified** is an HTB machine simulating an AD environment with ADCS. Key ports point to a domain controller. With valid creds, users can enumerate SMB shares and accounts. The attack chain abuses ADCS via the `management_svc` account using tools like BloodHound and `pywhisker` to add a KeyCredential. A forged certificate is used with PKINIT to get a TGT and escalate to domain admin.

@@ -5,7 +5,7 @@ categories: [Hackthebox, Windows]
 tags: [dpapi, kerberos]     # TAG names should always be lowercase
 description: Hard Windows box featuring advanced Active Directory attacks, including Kerberos abuse, gMSA exploitation, AS-REP roasting, and privilege escalation via delegation and impersonation.
 image:
-  path: assets\vintage\cropped-vintage.png
+  path: assets/vintage/cropped-vintage.png
 ---
 
 
@@ -89,11 +89,11 @@ nxc smb 10.10.11.45 -u users -p pass
 ```
 This didnt work...
 
-Fuck I needed to do this on the domain controller using kerberos authentication with -k:
+Oops I needed to do this on the domain controller using kerberos authentication with -k:
 ```sh
 nxc ldap dc01.vintage.htb -k -u P.ROSA -d VINTAGE.HTB -p Rosaisbest123 --users
 ```
-![alt text](assets/skeleton-hanging-on-fan.gif)
+![alt text](assets/memes/skeleton-hanging-on-fan.gif)
 
 
 ---
