@@ -104,7 +104,7 @@ This webpage was empty, but a refresh get request in burp responded with a pytho
 ### APK download
 
 This file had a bearer token allowing me to authorize to the `/apidocs/`, which revealed some api stuff that you can see in the image below:
-![alt text](assets/instan/instant1.png)
+![alt text](assets/instant/instant1.png)
  This get request responded with the following:
 ```json
 Response body
