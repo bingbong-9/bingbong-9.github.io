@@ -6,7 +6,7 @@ tags: []     # TAG names should always be lowercase
 description:  
 
 image:
-  path: assets\builder\cropped-builder.png
+  path: assets/builder/cropped-builder.png
 ---
 
 ### Introduction
@@ -50,7 +50,7 @@ The Jenkins interface, version `2.441`, is visible on accessing port 8080. Expos
 After navigating to port 80 you immediately see the Jenkins version number in the bottom, which after a quick google might be vulnerable to local file inclusion (CVE-2024-23897). https://www.exploit-db.com/exploits/51993
 
 After clicking around some more i found 2 potential usernames:
-![[Pasted image 20241021164626.png]]\
+![[Pasted image 20241021164626.png]]
 
 #### Tech Stack
 The site is clearly Jenkins, which describes itself as:

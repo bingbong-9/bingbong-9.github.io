@@ -6,7 +6,7 @@ tags: [api, powershell]     # TAG names should always be lowercase
 description: 
 
 image:
-  path: assets\instant\cropped-box-instant.png
+  path: assets/instant/cropped-box-instant.png
 ---
 
 

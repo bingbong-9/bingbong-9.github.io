@@ -438,9 +438,9 @@ c.neri_adm : Uncr4ck4bl3P4ssW0rd0312
 ```
 
 ### Enumeration
-![alt text](assets\image-5.png)
+![alt text](assets/image-5.png)
 
-![alt text](assets\image-6.png)
+![alt text](assets/image-6.png)
 
 ---
 ### Privilege escalation

@@ -6,7 +6,7 @@ tags: [smb, secretsdump, sebackupprivilege]     # TAG names should always be low
 description: SMB enumeration revealed credentials, enabling deeper access. Using SeBackupPrivilege, SAM and SYSTEM files were dumped, revealing hashes and granting admin access for root flag.
 
 image:
-  path: assets\cicada\cropped-box-cicada.png
+  path: assets/cicada/cropped-box-cicada.png
 ---
 
 
@@ -86,7 +86,7 @@ Got access denied on with a null session.
 ---
 #### Port 3269
 I navigated in the browser to `https://cicada.htb:3269/` and viewed the ssl cert:
-![alt text](assets\cicada\cicada1.png)
+![alt text](assets/cicada/cicada1.png)
 - It looks like this host might be a certificate authority
 
 
@@ -140,16 +140,16 @@ enum4linux -a -u 'michael.wrightson' -p 'Cicada$M6Corpb*@Lp#nZp!8' 10.10.11.35
 > Found new users and another pasword for david, they will be added to the user & password lists. 
 
 With these credentials I managed to connect to the DEV SMB share:
-![alt text](assets\cicada\cicada2.png)
+![alt text](assets/cicada/cicada2.png)
 This bakup script contained credentials again:
-![alt](assets\cicada\cicada3.png)
+![alt](assets/cicada/cicada3.png)
 
 ---
 ## Initial access
 Finally with these credentials I managed to get a shell using WINRM
-![image](assets\cicada\cicada4.png)
+![image](assets/cicada/cicada4.png)
 Next I used evil-wirm to connect with the target, and the first thing i checked was `whoami /priv`, which reveals that i have the `SeBackupPrivilege` since this privilge is often used for privilege escalation it is a good finding. 
-![Pasted](assets\cicada\cicada5.png)
+![Pasted](assets/cicada/cicada5.png)
 
 ---
 ### Privilege escalation
